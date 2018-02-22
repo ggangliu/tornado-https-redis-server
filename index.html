@@ -3,13 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Learning Python</title>
-    <script type="text/javascript">
-        $(document).ready(function(){
-          $("button").click(function(){
-            alert($(":text").val());
-          });
-        });
-    </script>
 </head>
 <body>
     <h2>刚刚欢迎您</h2>
@@ -25,17 +18,10 @@
             <tr>
                 <td>{{one[0]}}</td>
                 <td>{{one[1]}}</td>
-                <td><input type="text"/></td>
-                <td><a href="/message?echostr=llll">回复</a></td>
+                <td><input type="text" name="{{one[0]}}"/></td>
+                <td><input type="button"  value="回复" onclick="javascript:location.href='/message?echostr='+document.getElementsByName('{{one[0]}}')[0].value;"/></td>
             </tr>
             {% end %}
-
-            <tr>
-              <td>0135lQ2x0NJYgj18oF2x0BjN2x05lQ21</td>
-              <td>什么时候能发货</td>
-              <td><input type="text"/></td>
-              <td><a href="/message?echostr=llll">回复</a></td>
-            </tr>
         </table>
     </form>
 </body>
