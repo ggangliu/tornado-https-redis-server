@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learning Python</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("button").click(function(){
+            alert($(":text").val());
+          });
+        });
+    </script>
+</head>
+<body>
+    <h2>刚刚欢迎您</h2>
+    <form method="POST">
+        <table border="1">
+            <tr>
+              <td>用户名</td>
+              <td>客户的消息</td>
+              <td>回复客户的消息</td>
+              <td>点击回复</td>
+            </tr>
+            {% for one in users %}
+            <tr>
+                <td>{{one[0]}}</td>
+                <td>{{one[1]}}</td>
+                <td><input type="text"/></td>
+                <td><a href="/message?echostr=llll">回复</a></td>
+            </tr>
+            {% end %}
+
+            <tr>
+              <td>0135lQ2x0NJYgj18oF2x0BjN2x05lQ21</td>
+              <td>什么时候能发货</td>
+              <td><input type="text"/></td>
+              <td><a href="/message?echostr=llll">回复</a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
