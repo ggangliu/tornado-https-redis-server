@@ -16,10 +16,10 @@
             </tr>
             {% for one in users %}
             <tr>
-                <td>{{one[0]}}</td>
-                <td>{{one[1]}}</td>
-                <td><input type="text" name="{{one[0]}}"/></td>
-                <td><input type="button"  value="回复" onclick="javascript:location.href='/message?echostr='+document.getElementsByName('{{one[0]}}')[0].value;"/></td>
+                <td>{{one['user']}}</td>
+                <td>{{one['msg']}}</td>
+                <td><input type="text" name="{{one['user']}}" value="{{one['reply_msg']}}"/></td>
+                <td><input type="button"  value="回复" onclick="javascript:location.href='/reply_msg?user={{one['user']}}&reply_msg='+document.getElementsByName('{{one['user']}}')[0].value;"/></td>
             </tr>
             {% end %}
         </table>
